@@ -38,7 +38,7 @@ if (empty($_SESSION)) {
 
                     <p class="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                    <a href="views/frontend/articles/article1.php" class="link">En savoir plus</a>
+                    <a href="views/frontend/articles/article1.php?numArt=2&like=0" class="link">En savoir plus</a>
                 </div>
             </div>
         </div>
@@ -64,14 +64,13 @@ if (empty($_SESSION)) {
                     <h2 class="most_text">Most Awesome Blue Lake With Snow <br>River</h2>
                     <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                    <a href="views/frontend/articles/article1.php" class="link">En savoir plus</a>
+                    <a href="views/frontend/articles/article1.php?numArt=2&like=0" class="link">En savoir plus</a>
                 </div>
 
 
             </div>
         </div>
     </div>
-    <!-- blog section end -->
 
     <!--form start-->
     <div class="form-contact">
