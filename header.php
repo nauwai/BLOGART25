@@ -2,12 +2,6 @@
 session_start();
 
 var_dump($_SESSION);
-
-if (!empty($_SESSION)) {
-    header('Location: index.php');
-} elseif (empty($_SESSION)) {
-    header('Location: views/backend/security/login.php');
-}
 ?><!DOCTYPE html>
 <html lang="fr-FR">
 <head>
