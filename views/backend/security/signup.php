@@ -1,9 +1,5 @@
 <?php
 include '../../../header.php';
-
-if (!empty($_SESSION)) {
-    header('Location: ../../../index.php');
-}
 ?>
 
 <!-- Bootstrap form to create a new statut -->
