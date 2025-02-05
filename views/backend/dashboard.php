@@ -2,13 +2,9 @@
 include '../../header.php';
 if (empty($_SESSION)) {
     header("Location: security/login.php");
-} elseif ($_SESSION['statut'] == '2' || $_SESSION['statut'] == '3') {
-    $_SESSION['flash']['danger'] = 'Vous êtes pas administrateur du site !';
-    header("Location: ../../index.php");
 }
 ?>
 
-<!-- Bootstrap admin dashboard template -->
 <div>
     <hr class="my-3">
     <div style="color: black; font-size: 30px; font-family: Montserrat; font-weight: 400; padding-left: 3rem ;word-wrap: break-word">Liens permettant d'administrer le Blog d'Articles</div>    
