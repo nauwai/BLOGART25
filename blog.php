@@ -16,7 +16,7 @@ if (empty($_SESSION)) {
                         <div class="card-body">
                             <h5 class="card-title">Marathon</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="views/frontend/articles/article1.php" class="btn bouton ">Lire plus</a>
+                            <a href="views/frontend/articles/article1.php?numArt=2&like=0" class="btn bouton ">Lire plus</a>
                         </div>
                     </div>
                     <div class="card" style="width: 19rem;">
@@ -24,7 +24,7 @@ if (empty($_SESSION)) {
                         <div class="card-body">
                             <h5 class="card-title">Auteur</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="views/frontend/articles/article1.php" class="btn bouton ">Lire plus</a>
+                            <a href="views/frontend/articles/article1.php?numArt=2&like=0" class="btn bouton ">Lire plus</a>
                         </div>
                     </div>
                 </div>
