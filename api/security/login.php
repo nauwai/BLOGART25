@@ -13,7 +13,7 @@ var_dump($connexion);
 
 if ($connexion) {
     $_SESSION['id'] = $connexion[0]['numMemb'];
-    header('Location: ../../index.php');
+    header('Location: ../../');
     $_SESSION['pseudo'] = $connexion[0]['pseudoMemb'];
     $_SESSION['statut'] = $connexion[0]['numStat'];
     $_SESSION['flash']['danger'] = 'Vous êtes connecté';
