@@ -2,6 +2,7 @@
 require_once '../../../header.php';
 
 $numArt = $_GET['numArt'];
+
 $likePositif = 1;
 
 $articles = sql_select('ARTICLE', '*', "numArt = $numArt");

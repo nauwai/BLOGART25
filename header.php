@@ -4,7 +4,6 @@ require_once 'config.php';
 //var_dump($_SESSION);
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,8 +73,15 @@ require_once 'config.php';
                         <a class="nav-link" href="#contacter">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i style="font-size: 26px"
-                                                        class="fa-solid fa-magnifying-glass"></i></a>
+                        <a class="nav-link" href="#" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                    <li style="margin-top: 8px" class="nav-item">
+                        <form method="post" action="<?php echo ROOT_URL . '/views/frontend/search.php' ?>">
+                            <div class="search-input">
+                        <input id="input" type="text" name="rechercheInput" placeholder="Entrez votre recherche...">
+                            <button type="submit"><i style="color: white; font-size: 20px" class="fa-regular fa-paper-plane"></i></button>
+                            </div>
+                        </form>
                     </li>
                     <li class="nav-item">
                         <a <?php if (empty($_SESSION)) {
@@ -97,7 +103,6 @@ require_once 'config.php';
                                   </li>';
                         }
                     } ?>
-
                 </ul>
             </div>
         </nav>

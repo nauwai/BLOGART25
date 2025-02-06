@@ -204,6 +204,7 @@ button {
     margin: 0;
     padding: 0;
     cursor: pointer;
+    background: none;
 }
 
 .full {
@@ -1028,4 +1029,29 @@ textarea#comment::placeholder {
     background-color: #6D071A;
     border: none;
     color: white;
+}
+
+.search-container {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+}
+
+.close-search {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.close-search:hover {
+    color: red;
+}
+.search-input {
+    display: none;
 }

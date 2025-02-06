@@ -14,6 +14,15 @@
 
 <!-- copyright section end -->
 <!-- Javascript files-->
+
+<script>
+    const search = document.getElementById('search-btn')
+    const searchInput = document.querySelector('.search-input');
+    search.addEventListener('click', function () {
+        searchInput.style.display = 'block';
+    })
+</script>
+
 <script src="<?php echo ROOT_URL . '/src/js/jquery.min.js' ?>"></script>
 <script src="<?php echo ROOT_URL . '/src/js/popper.min.js' ?>"></script>
 <script src="<?php echo ROOT_URL . '/src/js/bootstrap.bundle.js' ?>"></script>
