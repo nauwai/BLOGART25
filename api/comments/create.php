@@ -10,7 +10,7 @@ require_once '../../functions/ctrlSaisies.php';
 
 $libCom = $_POST['libCom'];
 $numMemb = $_SESSION['id'];
-$numArt = $_POST['articles'];
+$numArt = $_GET['numArt'];
 
 var_dump($_POST);
 
