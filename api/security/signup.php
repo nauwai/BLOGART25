@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 session_start();
@@ -64,6 +66,9 @@ if ($connexion) {
 
 
 }
+
+ob_end_flush();
+
 
 
 
