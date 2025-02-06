@@ -53,7 +53,7 @@ $thematique = sql_select('THEMATIQUE', '*', "numThem = '$numThem'")[0];
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/articles/update.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/articles/update.php' ?>" method="post" enctype="multipart/form-data" >
                 <div class="form-group">
                     <label for="numArt">Numero</label>
                         <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
@@ -110,8 +110,8 @@ $thematique = sql_select('THEMATIQUE', '*', "numThem = '$numThem'")[0];
                     <label for="urlPhotArt">Image actuelle</label>
                         <div>
                             <!-- Input pour télécharger une nouvelle image -->
-                            <input id="urlPhotArt" name="urlPhotArt" class="form-control" type="file" accept="image/*">
-                            
+                            <input  id="urlPhotArt" name="urlPhotArt" class="form-control" type="file" accept="image/*">
+
                             <!-- Affichage de l'image actuelle -->
                             <img src="/src/uploads/<?php echo $urlPhotArt; ?>" alt="Image actuelle" style="max-width: 300px; height: auto; margin-top: 10px; border-radius: 8px;">
                         </div>

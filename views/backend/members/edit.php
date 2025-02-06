@@ -1,6 +1,8 @@
 <?php
 include '../../../header.php';
 
+
+
 if(isset($_GET['numMemb'])){
     $numMem = $_GET['numMemb'];
     $libMem = sql_select("MEMBRE", "*", "numMemb = $numMem")[0];

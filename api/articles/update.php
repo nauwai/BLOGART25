@@ -12,11 +12,30 @@
     $libSsTitr2Art = ctrlSaisies($_POST['libSsTitr2Art']);
     $parag3Art = ctrlSaisies($_POST['parag3Art']);
     $libConclArt = ctrlSaisies($_POST['libConclArt']);
-    $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
+    $urlPhotArt = ctrlSaisies($_FILES['urlPhotArt']['name']);
     $libThem = ctrlSaisies($_POST['libThem']);
+    var_dump($_FILES['urlPhotArt']);
 
+if (isset($_FILES['urlPhotArt']) && $_FILES['urlPhotArt']['error'] == 0) {
+    $uploadDir = __DIR__ . "/../../src/uploads/";
+    $fileTmp = $_FILES['urlPhotArt'];
+    $fileName = basename($_FILES['urlPhotArt']['name']);
+    $filePath = $uploadDir . $fileName;
 
-    sql_update('ARTICLE','libTitrArt= "$libTitrArt", libChapoArt= "$libChapoArt", libAccrochArt= "$libAccrochArt", parag1Art= "$parag1Art", libSsTitr1Art= "$libSsTitr1Art", parag2Art= "$parag2Art", libSsTitr2Art= "$libSsTitr2Art", parag3Art= "$parag3Art", libConclArt= "$libConclArt", urlPhotArt= "$urlPhotArt"', "numArt = $numArt");
+    $fileType = mime_content_type($_FILES['urlPhotArt']['tmp_name']);
+    if (strpos($fileType, 'image') === false) {
+        die("Ce fichier n'est pas une image.");
+    }
+
+    if (move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], $filePath)) {
+        echo "Image enregistrée avec succès : <a href='$filePath'>$fileName</a>";
+    } else {
+        echo "Erreur lors de l'upload.";
+    }
+} else {
+    echo "Aucun fichier n'a été envoyé.";
+}
+
 
 
 sql_update('ARTICLE', 'libTitrArt ="' .$libTitrArt.'"', "numArt = $numArt");

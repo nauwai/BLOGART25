@@ -55,7 +55,6 @@ $inscription = sql_insert('MEMBRE', 'pseudoMemb, prenomMemb, nomMemb, passMemb, 
 $connexion = sql_select('MEMBRE', "*", "pseudoMemb = '$pseudoMemb'");
 
 //var_dump($connexion);
-
 if ($connexion) {
     $_SESSION['id'] = $connexion[0]['numMemb'];
     header('Location: ../../index.php');

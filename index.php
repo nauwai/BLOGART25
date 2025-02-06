@@ -2,10 +2,6 @@
 require_once 'header.php';
 //var_dump($_SESSION);
 
-if (empty($_SESSION)) {
-    header("Location: views/backend/security/login.php");
-}
-
 ?>
 
     <!-- banner section start -->

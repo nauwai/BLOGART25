@@ -10,7 +10,7 @@ include '../../../header.php';
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="libTitrArt">Titre</label>
                     <input id="libTitrArt" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" >
