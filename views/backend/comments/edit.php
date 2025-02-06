@@ -48,7 +48,7 @@ if(isset($_GET['numCom'])){
                     <input id="dtCreaArt" name="dtCreaArt" class="form-control" type="text" autofocus="autofocus" value="<?php echo($dtCreaArt); ?>" readonly="readonly"/>
 
                     <label for="libCom">Commentaire à validé</label>
-                    <input id="libCom" name="libCom" class="form-control" type="text" autofocus="autofocus" value="<?php echo($libCom); ?>"/>
+                    <input id="libCom" name="libCom" class="form-control" type="text" autofocus="autofocus" value="<?php echo($libCom); ?>" readonly="readonly"/>
                     
                     <label for="libTitrArt">En tant que modérateur, je valide le commentaire du membre : </label> <br>
                     <div class="form-check form-check-inline">
@@ -66,11 +66,11 @@ if(isset($_GET['numCom'])){
                     <label for="libTitrArt">En tant que modérateur, je souhaite que le post ne soit pas/plus affiché (suppression
                     logique) :</label> <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="suppLogique" id="inlineRadio1" value="oui">
                         <label class="form-check-label" for="inlineRadio1">OUI</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="suppLogique" id="inlineRadio2" value="non">
                         <label class="form-check-label" for="inlineRadio2">NON</label> 
                     </div> <br>
 

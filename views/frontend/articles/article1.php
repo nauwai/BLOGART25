@@ -4,13 +4,14 @@ require_once '../../../header.php';
 $numArt = $_GET['numArt'];
 
 $likePositif = 1;
+$ok = 0;
 
 $articles = sql_select('ARTICLE', '*', "numArt = $numArt");
 //var_dump($articles);
 
 $allLike = sql_select('LIKEART', '*', "numArt = $numArt AND likeA = $likePositif");
 
-$allComments = sql_select('COMMENT', '*', "numArt = $numArt");
+$allComments = sql_select('COMMENT', '*', "numArt = $numArt AND delLogiq = $ok");
 
 //var_dump($_SESSION);
 
