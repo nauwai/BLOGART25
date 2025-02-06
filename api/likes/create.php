@@ -7,7 +7,6 @@ require_once '../../functions/ctrlSaisies.php';
 
 $numMem = $_SESSION['id'];
 $numArt = $_GET['numArt'];
-$likeA = 1;
 
 $likeselect = sql_select('LIKEART', '*', "numMemb = $numMem AND numArt = $numArt");
 
@@ -18,20 +17,20 @@ if ($likeselect) {
         echo 'unlike';
         $likeA = 1;
         $Unlike = sql_update('LIKEART', "likeA = $likeA", "numMemb = $numMem AND numArt = $numArt");
-        header('Location: ../../views/frontend/articles/article1.php?numArt=2&like=1');
+        header('Location: ../../views/frontend/articles/article1.php?numArt='.$numArt.'&like=1');
 
     } else {
         echo 'like';
         $likeA = 0;
         $Unlike = sql_update('LIKEART', "likeA = $likeA", "numMemb = $numMem AND numArt = $numArt");
-        header('Location: ../../views/frontend/articles/article1.php?numArt=2&like=0');
+        header('Location: ../../views/frontend/articles/article1.php?numArt='.$numArt.'&like=0');
 
     }
-    //echo 'update';
 } else {
     echo 'insert';
+    $likeA = 1;
     $likeAjoute = sql_insert('LIKEART', 'numMemb, numArt, likeA', "'$numMem', '$numArt', '$likeA'");
-    header('Location: ../../views/frontend/articles/article1.php?numArt=2&like=0');
+    header('Location: ../../views/frontend/articles/article1.php?numArt='.$numArt.'&like=1');
 
 }
 

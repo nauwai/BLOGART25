@@ -8,12 +8,12 @@ require_once '../../functions/ctrlSaisies.php';
 
 $libCom = $_POST['libCom'];
 $numMemb = $_SESSION['id'];
-$numArt = 2;
+$numArt = $_GET['numArt'];
 
 var_dump($libCom);
 
 
 $ComAjoute = sql_insert('COMMENT', 'libCom, numMemb, numArt', "'$libCom', '$numMemb', '$numArt'");
 
-header('Location: ../../views/frontend/articles/article1.php?numArt=2&like=0');
+header('Location: ../../views/frontend/articles/article1.php?numArt='.$numArt.'&like=0');
 

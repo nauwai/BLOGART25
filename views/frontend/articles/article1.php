@@ -10,6 +10,8 @@ $allLike = sql_select('LIKEART', '*', "numArt = $numArt AND likeA = $likePositif
 
 $allComments = sql_select('COMMENT', '*', "numArt = $numArt");
 
+//var_dump($numArt);
+
 
 $nblike = count($allLike);
 
@@ -40,7 +42,7 @@ foreach ($articles as $article) :
                 </div>
                 <div class="small d-flex justify-content-start">
                     <a href="
-                <?php echo ROOT_URL . '/api/likes/create.php?numArt=2' ?>
+                <?php echo ROOT_URL . '/api/likes/create.php?numArt='.$numArt.'' ?>
 
 "
                        class="d-flex align-items-center me-3">
@@ -54,7 +56,7 @@ foreach ($articles as $article) :
                         <p><?php echo $nblike; ?> J'aime</p>
                     </a>
                 </div>
-                <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
+                <form action="<?php echo ROOT_URL . '/api/comments/create.php?numArt='.$numArt.'' ?>" method="post">
                     <div class="card-footer py-3 border-0 col-lg-6" style="background-color: #f8f9fa;">
                         <div class="d-flex w-100">
                             <i style="font-size: 20px; margin-right: 10px"
