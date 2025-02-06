@@ -63,7 +63,7 @@ require_once 'config.php';
                     <li class="nav-item">
                         <a class="nav-link" <?php if (!empty($_SESSION)) {
                             echo 'style="display: none"';
-                        } ?> href="<?php echo ROOT_URL . '/views/backend/security/login.php' ?>">Inscription</a>
+                        } ?> href="<?php echo ROOT_URL . '/views/backend/security/signup.php' ?>">Inscription</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" <?php if (!empty($_SESSION)) {
