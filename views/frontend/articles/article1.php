@@ -10,7 +10,7 @@ $allLike = sql_select('LIKEART', '*', "numArt = $numArt AND likeA = $likePositif
 
 $allComments = sql_select('COMMENT', '*', "numArt = $numArt");
 
-//var_dump($numArt);
+//var_dump($_SESSION);
 
 
 $nblike = count($allLike);
@@ -41,10 +41,7 @@ foreach ($articles as $article) :
                     </div>
                 </div>
                 <div class="small d-flex justify-content-start">
-                    <a href="
-                <?php echo ROOT_URL . '/api/likes/create.php?numArt='.$numArt.'' ?>
-
-"
+                    <a <?php if (empty($_SESSION)) {echo 'style="pointer-events: none;"';} ?> href="<?php echo ROOT_URL . '/api/likes/create.php?numArt='.$numArt?>"
                        class="d-flex align-items-center me-3">
                         <?php if (!empty($_GET)) {
                             if ($_GET['like'] == 0) {
@@ -56,13 +53,18 @@ foreach ($articles as $article) :
                         <p><?php echo $nblike; ?> J'aime</p>
                     </a>
                 </div>
-                <form action="<?php echo ROOT_URL . '/api/comments/create.php?numArt='.$numArt.'' ?>" method="post">
+                <form action="<?php
+                if (!empty($_SESSION)) {
+                    echo ROOT_URL . '/api/comments/create.php?numArt='.$numArt;
+                } else
+                    echo ROOT_URL . '/views/backend/security/login.php';
+                ?>" method="post">
                     <div class="card-footer py-3 border-0 col-lg-6" style="background-color: #f8f9fa;">
                         <div class="d-flex w-100">
                             <i style="font-size: 20px; margin-right: 10px"
                                class="fa-regular fa-user"></i>
                             <div data-mdb-input-init class="form-outline w-100">
-                        <textarea name="libCom" class="form-control" id="textAreaExample" rows="4"
+                        <textarea <?php if (empty($_SESSION)) { echo 'disabled="disabled" placeholder="connectez vous pour commenter"';}?> name="libCom" class="form-control" id="textAreaExample" rows="4"
                                   style="background: #fff;"></textarea>
                             </div>
                         </div>

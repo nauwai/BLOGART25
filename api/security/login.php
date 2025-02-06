@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 session_start();
@@ -31,3 +32,5 @@ if ($connexion && $connexion[0]) {
     echo "L'utilisateur n'existe pas.";
 }
 var_dump($_SESSION);
+
+ob_end_flush();
