@@ -14,13 +14,19 @@ $eMailMemb = ctrlSaisies($_POST['email']);
 $eMailConf = ctrlSaisies($_POST['emailConfirm']);
 $passwordConfirm = ctrlSaisies($_POST['passwordConfirm']);
 $numStat = 0;
-$optin = 0;
+$optin = $_POST['radio'];
 
-if (isset($_POST['oui'])) {
+var_dump($optin);
+
+if ($optin == 'oui') {
     $optin = 1;
-} elseif (isset($_POST['non'])) {
+} elseif ($optin == 'non') {
     $optin = 0;
+} elseif (!$optin) {
+    $optin = 0;
+
 }
+
 
 
 if (isset($_POST['statut'])) {

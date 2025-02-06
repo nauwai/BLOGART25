@@ -47,11 +47,9 @@ include '../../../header.php';
                 <div class="form-group">
                     <label for="libThem">J'accepte que mes données soient conservées</label><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="oui" id="inlineRadio1" value="oui">
+                        <input class="form-check-input" type="radio" name="radio" id="inlineRadio1" value="oui">
                         <label class="form-check-label" for="oui">Oui</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="non" id="inlineRadio2" value="non">
+                        <input class="form-check-input" type="radio" name="radio" id="inlineRadio2" value="non">
                         <label class="form-check-label" for="non">Non</label>
                     </div>
                 </div>

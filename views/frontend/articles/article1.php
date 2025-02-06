@@ -6,6 +6,7 @@ $numArt = $_GET['numArt'];
 $likePositif = 1;
 
 $articles = sql_select('ARTICLE', '*', "numArt = $numArt");
+//var_dump($articles);
 
 $allLike = sql_select('LIKEART', '*', "numArt = $numArt AND likeA = $likePositif");
 
@@ -22,11 +23,19 @@ foreach ($articles as $article) :
     <!-- contact section start -->
     <div class="contact_section layout_padding">
         <div class="container">
+
             <div class="row article1">
+
+                <div class="col-md-12 mb-4 image-article">
+                    <h2><?php echo $article['libTitrArt']; ?></h2>
+                    <p><?php echo $article['libChapoArt']; ?></p>
+                    <img style="border-radius: 20px" src="../../../src/uploads/<?php echo $article['urlPhotArt']; ?>" class="image" alt="...">
+                </div>
+
                 <div class="title">
+
                     <div>
-                        <h2><?php echo $article['libTitrArt']; ?></h2>
-                        <p><?php echo $article['libChapoArt']; ?></p>
+
                         <p><?php echo $article['libAccrochArt']; ?></p>
                         <p><?php echo $article['parag1Art']; ?></p>
                         <p><?php echo $article['libSsTitr1Art']; ?></p>
@@ -37,9 +46,6 @@ foreach ($articles as $article) :
 
                     </div>
 
-                    <div class="col-md-4 image-article">
-                        <img src="../../../src/images/affiche.webp" class="image" alt="...">
-                    </div>
                 </div>
                 <div class="small d-flex justify-content-start">
                     <a <?php if (empty($_SESSION)) {echo 'style="pointer-events: none;"';} ?> href="<?php echo ROOT_URL . '/api/likes/create.php?numArt='.$numArt?>"

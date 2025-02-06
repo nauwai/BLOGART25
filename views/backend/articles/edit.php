@@ -14,14 +14,31 @@ $test = sql_select('ARTICLE', "*", "numArt = '$numArt'")[0];
 $numThem = $test['numThem'];
 //var_dump($test['numThem']);
 
-$query = "ARTICLE 
-INNER JOIN THEMATIQUE ON ARTICLE.numThem = THEMATIQUE.numThem 
-INNER JOIN MOTCLEARTICLE ON ARTICLE.numArt = MOTCLEARTICLE.numArt
-INNER JOIN MOTCLE ON MOTCLEARTICLE.numMotCle = MOTCLE.numMotCle";
+$query_non_selectionnes = "MOTCLE
+WHERE numMotCle NOT IN (
+    SELECT numMotCle 
+    FROM MOTCLEARTICLE 
+    WHERE numArt = $numArt
+)";
 
-//$article = sql_select($query, "*")[0];
+$query = "MOTCLE 
+INNER JOIN MOTCLEARTICLE ON MOTCLE.numMotCle = MOTCLEARTICLE.numMotCle
+INNER JOIN ARTICLE ON MOTCLEARTICLE.numArt = ARTICLE.numArt
+WHERE ARTICLE.numArt = $numArt";
+
+$articles = sql_select($query, "*");
+
+
+$mots_non_selectionnes = sql_select($query_non_selectionnes, "*");
+//var_dump($mots_non_selectionnes);
+
+
+$articles = sql_select('MOTCLE', "*");
+
+//var_dump($articles);
 
 $thematique = sql_select('THEMATIQUE', '*', "numThem = '$numThem'")[0];
+$thematiqueAlls = sql_select('THEMATIQUE', '*');
 
 //var_dump($thematique);
 
@@ -70,7 +87,7 @@ $thematique = sql_select('THEMATIQUE', '*', "numThem = '$numThem'")[0];
                     <label for="dtMajArt">Date de Modification</label>
                         <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
                         <input id="dtMajArt" name="dtMajArt" class="form-control" type="text" disabled value="<?php echo($dtMajArt); ?>" />
-                        
+
                     <label for="libChapoArt">Chapeau</label>
                         <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
                         <input id="libChapoArt" name="libChapoArt" class="form-control" type="text" value="<?php echo($libChapoArt); ?>" />
@@ -105,8 +122,6 @@ $thematique = sql_select('THEMATIQUE', '*', "numThem = '$numThem'")[0];
                     <label for="libConclArt">Conclusion</label>
                         <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
                         <input id="libConclArt" name="libConclArt" class="form-control" type="text" value="<?php echo($libConclArt); ?>" />
-
-
                     <label for="urlPhotArt">Image actuelle</label>
                         <div>
                             <!-- Input pour télécharger une nouvelle image -->
@@ -115,10 +130,21 @@ $thematique = sql_select('THEMATIQUE', '*', "numThem = '$numThem'")[0];
                             <!-- Affichage de l'image actuelle -->
                             <img src="/src/uploads/<?php echo $urlPhotArt; ?>" alt="Image actuelle" style="max-width: 300px; height: auto; margin-top: 10px; border-radius: 8px;">
                         </div>
-
                     <label for="libThem">Thématiques</label>
-                        <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
-                        <input id="libThem" name="libThem" class="form-control" type="text" value="<?php echo($libThem); ?>" />  
+                    <select class="mt-4" name="thematiques" id="pet-select">
+                        <?php foreach ($thematiqueAlls as $thematiqueAll) :?>
+                        <option value="<?php echo $thematiqueAll['numThem']?>"><?php echo $thematiqueAll['libThem']?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="form-group mt-4">
+                        <label for="pet-select">Choisir un Mot cle</label>
+                    </div>
+                    <?php foreach ($articles as $index => $article) : ?>
+                        <div class="form-check form-check-inline">
+                            <input name="motcleold[]" class="form-check-input" type="checkbox" id="motcleold_<?php echo $index; ?>" value="<?php echo $article['numMotCle']; ?>">
+                            <label class="form-check-label" for="motcleold_<?php echo $index; ?>"><?php echo $article['libMotCle']; ?></label>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
                 <br />
                 <div class="form-group mt-2">

@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
     require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
     require_once '../../functions/ctrlSaisies.php';
 
@@ -13,8 +15,14 @@
     $parag3Art = ctrlSaisies($_POST['parag3Art']);
     $libConclArt = ctrlSaisies($_POST['libConclArt']);
     $urlPhotArt = ctrlSaisies($_FILES['urlPhotArt']['name']);
-    $libThem = ctrlSaisies($_POST['libThem']);
-    var_dump($_FILES['urlPhotArt']);
+    $libThem = ctrlSaisies($_POST['thematiques']);
+
+$motcle = isset($_POST['motcleold']) ? $_POST['motcleold'] : [];
+
+
+
+var_dump($_POST);
+    //var_dump($_FILES['urlPhotArt']);
 
 if (isset($_FILES['urlPhotArt']) && $_FILES['urlPhotArt']['error'] == 0) {
     $uploadDir = __DIR__ . "/../../src/uploads/";
@@ -29,6 +37,7 @@ if (isset($_FILES['urlPhotArt']) && $_FILES['urlPhotArt']['error'] == 0) {
 
     if (move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], $filePath)) {
         echo "Image enregistrée avec succès : <a href='$filePath'>$fileName</a>";
+        header('Location: ../../views/backend/articles/list.php');
     } else {
         echo "Erreur lors de l'upload.";
     }
@@ -48,7 +57,19 @@ sql_update('ARTICLE', 'parag3Art ="' .$parag3Art.'"', "numArt = $numArt");
 sql_update('ARTICLE', 'libConclArt ="' .$libConclArt.'"', "numArt = $numArt");
 sql_update('ARTICLE', 'parag2Art ="' .$parag2Art.'"', "numArt = $numArt");
 sql_update('ARTICLE', 'urlPhotArt ="' .$urlPhotArt.'"', "numArt = $numArt");
+sql_update('ARTICLE', 'numThem ="' .$libThem.'"', "numArt = $numArt");
 ///sql_update('ARTICLE', 'libThem ="' .$libThem.'"', "numArt = $numArt");
 
+sql_delete('MOTCLEARTICLE', "numArt = $numArt");
+
+
+foreach ($motcle as $motcl) {
+
+    sql_insert('MOTCLEARTICLE', 'numArt, numMotCle', "'$numArt', '$motcl'");
+
+
+}
 
 header('Location: ../../views/backend/articles/list.php');
+
+ob_end_flush();

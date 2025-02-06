@@ -2,6 +2,12 @@
 require_once 'header.php';
 //var_dump($_SESSION);
 
+if (empty($_SESSION)) {
+    header("Location: views/backend/security/login.php");
+}
+
+$articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
+//var_dump($articles);
 ?>
 
     <!-- banner section start -->
@@ -10,42 +16,33 @@ require_once 'header.php';
             <p class="txt-banner">Croquer Bordeaux à pleine dent</p>
             <h1 class="banner_taital">Bordeaux à travers la gastronomie<br>Une aventure culinaire</h1>
         </div>
+        <div><h1 class="ml-5 pl-5">ARTICLES À LE UNE</h1></div>
+
     </div>
     <!-- banner section end -->
-    </div
-
     <!-- about section start -->
+<?php foreach($articles as $article){ ?>
     <div class="about_section layout_padding">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-lg-8 col-sm-12">
-                    <div class="about_img"><img src="src/images/marathon.webp"></div>
-                    <div class="like_icon"><img src="src/images/like-icon.png"></div>
-                    <p class="post_text">Post By : 09/06/2019</p>
-                    <h2 class="most_text">Most Awesome Blue Lake With Snow <br>Mountain</h2>
-                    <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                </div>
-
-                <div class="col-lg-4 col-sm-12">
-                    <div class="image_5">
-                        <img src="src/images/marathon2.jpg">
-                    </div>
-
-                    <p class="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                    <a href="views/frontend/articles/article1.php?numArt=2&like=0" class="link">En savoir plus</a>
+                    <div class="mb-3 about_img"><img src="src/uploads/<?php echo($article['urlPhotArt']); ?>"></div>
+                    <p class="post_text"><?php echo($article['dtCreaArt']); ?></p>
+                    <h2 class="most_text"><?php echo($article['libTitrArt']); ?></h2>
+                    <p class="lorem_text"><?php echo($article['libChapoArt']); ?></p>
+                <a href="views/frontend/articles/article1.php?numArt=<?php echo($article['numArt']); ?>&like=0" class="link">En savoir plus</a>
                 </div>
             </div>
         </div>
     </div>
+<?php } ?>
     <!-- about section end -->
-    <!-- blog section start -->
+    <!-- blog section start
     <div class="about_section layout_padding">
         <div class="container">
             <div class="row blog">
                 <div class="col-lg-4 col-sm-12 photo2">
-                    <!--Photo a cote-->
+
                     <div class="about_main">
                         <img src="src/images/plat.jpg" class="img-thumbnail" alt="...">
                         <img src="src/images/plat3.webp" class="img-thumbnail" alt="...">
@@ -60,13 +57,14 @@ require_once 'header.php';
                     <h2 class="most_text">Most Awesome Blue Lake With Snow <br>River</h2>
                     <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                    <a href="views/frontend/articles/article1.php?numArt=2&like=0" class="link">En savoir plus</a>
+                    <a href="views/frontend/articles/article1.php" class="link">En savoir plus</a>
                 </div>
 
 
             </div>
         </div>
     </div>
+    blog section end -->
 
     <!--form start-->
     <div class="form-contact">

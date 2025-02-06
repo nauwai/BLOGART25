@@ -4,10 +4,13 @@ ob_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
-$numThem = ctrlSaisies($_POST['numThem']);
+var_dump($_POST);
 
-sql_delete('THEMATIQUE', "numThem = $numThem");
+$numMemb = ctrlSaisies($_POST['numMemb']);
+$numArt = ctrlSaisies($_POST['numArt']);
 
-header('Location: ../../views/backend/thematiques/list.php');
+sql_delete('LIKEART', "numArt = $numArt AND numMemb = $numMemb");
+
+header('Location: ../../views/backend/likes/list.php');
 
 ob_end_flush();
