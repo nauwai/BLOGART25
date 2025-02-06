@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 session_start();
 var_dump($_SESSION);
 //var_dump($_GET);
@@ -34,3 +36,4 @@ if ($likeselect) {
 
 }
 
+ob_end_flush();
