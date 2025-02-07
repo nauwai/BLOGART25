@@ -104,7 +104,7 @@ require '../../../header.php';
     <div class="section9-title m-4 p-4">
         <h2>Nous contacter</h2>
         <p>
-            Pour en savoir plus sur nos pratiques de confidentialité, si vous avez des questions ou si vous souhaitez déposer une réclamation, veuillez nous contacter par e-mail à antoine.corberand@mmibordeaux.com, ou par courrier à l'adresse suivante : <br> <br>
+            Pour en savoir plus sur nos pratiques de confidentialité, si vous avez des questions ou si vous souhaitez déposer une réclamation, veuillez nous contacter par e-mail à noe.blanquart@mmibordeaux.com, ou par courrier à l'adresse suivante : <br> <br>
 
             1 rue jacques Ellul, 33800 Bordeaux, Gironde
         </p>
