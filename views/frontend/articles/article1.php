@@ -25,12 +25,12 @@ foreach ($articles as $article) :
     <div class="contact_section layout_padding">
         <div class="container">
 
-            <div class="row article1">
+            <div class="col-sm-12 row article1">
 
-                <div class="col-md-12 mb-4 image-article">
-                    <h2><?php echo $article['libTitrArt']; ?></h2>
-                    <p><?php echo $article['libChapoArt']; ?></p>
-                    <img style="border-radius: 20px" src="../../../src/uploads/<?php echo $article['urlPhotArt']; ?>" class="image" alt="...">
+                <div class="col-sm-12 image-article">
+                    <h2 class="title"><?php echo $article['libTitrArt']; ?></h2>
+                    <p class="col-sm-12"><?php echo $article['libChapoArt']; ?></p>
+                    <img class="col-sm-12" style="border-radius: 20px" src="../../../src/uploads/<?php echo $article['urlPhotArt']; ?>" class="image" alt="...">
                 </div>
 
                 <div class="title">

@@ -7,6 +7,8 @@
             <ul>
                 <li><a href="<?php echo ROOT_URL .'/index.php' ?>">Accueil</a></li>
                 <li><a href="<?php echo ROOT_URL .'/blog.php' ?>">Blog</a></li>
+                <li><a href="<?php echo ROOT_URL .'/views/frontend/rgpd/politiques.php' ?>">Politique</a></li>
+                <li><a href="<?php echo ROOT_URL .'/views/frontend/rgpd/cgu.php' ?>">Conditions Générales</a></li>
             </ul>
         </div>
     </div>

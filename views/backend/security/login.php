@@ -22,17 +22,6 @@ include '../../../header.php';
             <label class="form-label" for="password">Mot de passe</label>
         </div>
 
-        <!-- 2 column grid layout for inline styling -->
-        <div class="row mb-4 ">
-            <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form1Example3"/>
-                    <label class="form-check-label" for="form1Example3">Se souvenir de moi </label>
-                </div>
-            </div>
-        </div>
-
         <!-- Submit button -->
         <button data-mdb-ripple-init type="submit" class="btn btn-block btn-sign">Soumettre</button>
     </form>

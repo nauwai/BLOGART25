@@ -13,7 +13,7 @@ $allarticles = sql_select('ARTICLE', '*');
             <div class="row">
 
                 <?php foreach ($allarticles as $allarticle) : ?>
-                    <div class="col-lg-4 mt-4 col-md-6 col-sm-12 carte">
+                    <div class="ml-3 col-lg-4 mt-4 col-md-6 col-sm-12 carte">
                         <div class="card" style="width: 19rem;">
                             <img src="src/uploads/<?php echo $allarticle['urlPhotArt']; ?>" class="card-img-top"
                                  alt="Photo introuvable">
