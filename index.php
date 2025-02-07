@@ -5,7 +5,7 @@ require_once 'header.php';
 //var_dump($_SESSION);
 
 
-$articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
+$articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt ASC", "2");
 //var_dump($articles);
 ?>
     <!-- Modal
