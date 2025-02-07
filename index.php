@@ -32,7 +32,7 @@ $articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
             <p class="txt-banner">Croquer Bordeaux à pleine dent</p>
             <h1 class="banner_taital">Bordeaux à travers la gastronomie<br>Une aventure culinaire</h1>
         </div>
-        <div><h1 class="ml-5 pl-5">ARTICLES À LE UNE</h1></div>
+        <div><h1 class="ml-5 pl-5">ARTICLES À LA UNE</h1></div>
 
     </div>
     <!-- banner section end -->
