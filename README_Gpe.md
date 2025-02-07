@@ -1,19 +1,40 @@
-# Blogart Template
+# Blogart | Fin de Projet - 7 février 2025
 
-## Setup
+## 📥 Setup
+1. Importer le fichier `.sql` situé dans `BDD_A_EXPORTER/CreateBdBlogArt.sql`.
+2. Importer le fichier `.sql` situé dans `BDD_A_EXPORTER/BLOGART25.sql`.
 
+## 📂 Architecture
+### `api`
+Contient toutes les requêtes PHP, par exemple `create.php` pour la gestion des statuts et articles.
 
-## Architecture
-- **api** - Contains all php calls for example "create.php" for statuts, articles
-- **classes** - Contains all classes for example "members.php"
-- **config** - Contains all the configuration files specific to the operation of the application, for example "security.php"
-- **functions** - Contains all the functions of your code for example "data.php", "create.php"
-- **views** - Contain all front
-- **src** - Contain all sources files or external libs
+### `classes`
+Contient toutes les classes, par exemple `members.php`.
 
-## Files to complete
-- **.env** - Foreach user exemple in .env.example
-- **config/security.php** - Check user cookie
-- **index.php** - Must be the homepage
-- **views** - All your pages
-- 
+### `config`
+Contient les fichiers de configuration nécessaires au fonctionnement de l'application, par exemple `security.php`.
+
+### `functions`
+Contient les fonctions du projet, par exemple `data.php` et `create.php`.
+
+### `views`
+Contient l'ensemble des vues du site.
+
+### `src`
+Contient les fichiers sources ainsi que les bibliothèques externes.
+
+## 📌 État des lieux
+Le site fonctionne correctement malgré quelques bugs qui n'affectent pas l'expérience utilisateur mais qui peuvent impacter la sécurité du système.
+
+L'affichage des mots-clés et de la thématique est manquant sur les pages d'articles.
+
+La majorité des fonctionnalités ont été implémentées avec succès, notamment l'intégralité des CRUD du dashboard.
+
+## 👥 Crédits
+- **Linda ELBS**
+- **Amélie SAVARY-TOLSTOÏ**
+- **Nantenaina RAKOTOARIJAONA**
+- **Paul PAULY**
+- **Noé BLANQUART**
+
+**BLOGART 2025**
