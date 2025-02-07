@@ -23,6 +23,24 @@
     })
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!sessionStorage.getItem("cookieModalShown")) {
+            let cookieModal = new bootstrap.Modal(document.getElementById("cookieModal"));
+            cookieModal.show();
+            sessionStorage.setItem("cookieModalShown", "true");
+        }
+        document.getElementById("acceptCookies").addEventListener("click", function() {
+            let cookieModal = bootstrap.Modal.getInstance(document.getElementById("cookieModal"));
+            cookieModal.hide();
+        });
+        document.getElementById("rejectCookies").addEventListener("click", function() {
+            let cookieModal = bootstrap.Modal.getInstance(document.getElementById("cookieModal"));
+            cookieModal.hide();
+        });
+    });
+</script>
+
 <script src="<?php echo ROOT_URL . '/src/js/jquery.min.js' ?>"></script>
 <script src="<?php echo ROOT_URL . '/src/js/popper.min.js' ?>"></script>
 <script src="<?php echo ROOT_URL . '/src/js/bootstrap.bundle.js' ?>"></script>

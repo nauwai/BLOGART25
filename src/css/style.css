@@ -221,6 +221,13 @@ button {
     padding: 0px;
 }
 
+#cookieModal {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 300px;
+}
+
 .bg-light {
     background-color: transparent!important;
 }

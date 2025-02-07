@@ -1,14 +1,30 @@
 <?php
+ob_start();
+
 require_once 'header.php';
 //var_dump($_SESSION);
 
-if (empty($_SESSION)) {
-    header("Location: views/backend/security/login.php");
-}
 
 $articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
 //var_dump($articles);
 ?>
+    <!-- Modal -->
+    <div class="modal fade" id="cookieModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gestion des cookies</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Nous utilisons des cookies pour améliorer votre expérience. Acceptez-vous leur utilisation ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="rejectCookies">Refuser</button>
+                    <button type="button" class="btn btn-primary" id="acceptCookies">Accepter</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- banner section start -->
     <div class="container-fluid">
@@ -96,4 +112,5 @@ $articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
         </form>
     </div>
     <!--Form end-->
-<?php require_once 'footer.php'; ?>
+<?php require_once 'footer.php'; ob_end_flush();
+?>
