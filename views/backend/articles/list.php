@@ -2,7 +2,11 @@
 include '../../../header.php'; // contains the header and call to config.php
 
 
-if ($_SESSION['statut'] != '1' || empty($_SESSION)) {
+if ($_SESSION['statut'] != '1') {
+    header('Location: /');
+}
+
+if (empty($_SESSION)) {
     header('Location: /');
 }
 
