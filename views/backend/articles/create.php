@@ -15,9 +15,6 @@ include '../../../header.php';
                     <label for="libTitrArt">Titre</label>
                     <input id="libTitrArt" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" >
 
-                    <label for="dtCreaArt">Date de Création</label>
-                    <input id="dtCreaArt" name="dtCreaArt" class="form-control" type="text" autofocus="autofocus" />
-
                     <label for="libChapoArt">Chapeau</label>
                     <input id="libChapoArt" name="libChapoArt" class="form-control" type="text" autofocus="autofocus" />
 
