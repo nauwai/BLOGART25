@@ -18,7 +18,7 @@ $libConclArt =ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_FILES['urlPhotArt']['name']);
 var_dump($urlPhotArt);
 
-$numThem = 1; // À changer plus tard
+$numThem = 5; // À changer plus tard
 
 if (isset($_FILES['urlPhotArt']) && $_FILES['urlPhotArt']['error'] == 0) {
     $uploadDir = __DIR__ . "/../../src/uploads/";
