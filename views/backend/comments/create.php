@@ -14,7 +14,9 @@ $query = "COMMENT
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
+            <?php $articles = sql_select('ARTICLE', '*');
+            foreach ($articles as $article) : ?>
+            <form action="<?php echo ROOT_URL . '/api/comments/create.php?numArt='. $article['numArt']?> ?>" method="post">
                 <div class="form-group">
                     <label for="pseudoMemb">Pseudo</label>
                     <select id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" >
@@ -25,8 +27,7 @@ $query = "COMMENT
                     </select>
                     <label for="articles">Liste des articles</label>
                     <select id="articles" name="articles" class="form-control" type="text" autofocus="autofocus" >
-                        <?php $articles = sql_select('ARTICLE', '*');
-                        foreach ($articles as $article) : ?>
+
                         <option value="<?php echo $article['numArt']?>"><?php echo $article['libTitrArt'] ?></option>
                         <?php endforeach; ?>
                     </select>
