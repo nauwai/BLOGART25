@@ -7,7 +7,7 @@ $allarticles = sql_select('ARTICLE', '*');
 ?>
     <!-- blog section start -->
     <div class="about_section layout_padding">
-        <div><h1 class="ml-5 pl-5">TOUS LES BLOGS</h1></div>
+        <div><h1 class="ml-5 pl-5">TOUS LES ARTICLES</h1></div>
 
         <div class="container">
             <div class="row">
