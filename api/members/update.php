@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
@@ -49,3 +51,5 @@ sql_update('MEMBRE', 'accordMemb ="' .$optin.'"', "numMemb = $numMemb");
 
 
 header('Location: ../../views/backend/members/list.php');
+
+ob_end_flush();
