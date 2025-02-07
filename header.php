@@ -29,7 +29,7 @@ require_once 'config.php';
     <!-- Responsive-->
     <link rel="stylesheet" href="<?php echo ROOT_URL . '/src/css/responsive.css' ?>">
     <!-- fevicon -->
-    <link rel="icon" href="<?php echo ROOT_URL . 'src/images/favicon.png' ?>" type="image/gif"/>
+    <link rel="icon" href="src/images/favicon.png' ?>" type="image/gif"/>
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="<?php echo ROOT_URL . 'src/css/jquery.mCustomScrollbar.min.css' ?>">
     <!-- Tweaks for older IEs-->
@@ -69,9 +69,9 @@ require_once 'config.php';
                             echo 'style="display: none"';
                         } ?> href="<?php echo ROOT_URL . '/views/backend/security/login.php' ?>">Connexion</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="#contacter">Contact</a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
@@ -86,7 +86,7 @@ require_once 'config.php';
                     <li class="nav-item">
                         <a <?php if (empty($_SESSION)) {
                             echo 'style="display: none"';
-                        } ?> class="nav-link" href="#"><i style="font-size: 20px; margin-right: 10px"
+                        } ?> class="nav-link"><i style="font-size: 20px; margin-right: 10px"
                                                           class="fa-regular fa-user"></i><?php if (!empty($_SESSION)) {
                                 echo $_SESSION['pseudo'];
                             } ?></a>

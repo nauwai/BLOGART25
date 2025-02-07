@@ -82,35 +82,30 @@ $articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
     </div>
     blog section end -->
 
-    <!--form start-->
+    <!--form start
     <div class="form-contact">
         <h2 class="title-form">Contactez-nous</h2>
         <form class="col-lg-4 col-md-6" id="contacter">
-            <!-- Name input -->
             <div data-mdb-input-init class="form-outline mb-4">
                 <input type="text" id="form4Example1" class="form-control"/>
                 <label class="form-label" for="form4Example1">Nom</label>
             </div>
 
-            <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4">
                 <input type="email" id="form4Example2" class="form-control"/>
                 <label class="form-label" for="form4Example2">Adresse-mail</label>
             </div>
 
-            <!-- Message input -->
             <div data-mdb-input-init class="form-outline mb-4">
                 <textarea class="form-control" id="form4Example3" rows="4"></textarea>
                 <label class="form-label" for="form4Example3">Message</label>
             </div>
 
-            <!-- Checkbox -->
             <div class=" d-flex mb-4">
 
-                <!-- Submit button -->
                 <button data-mdb-ripple-init type="button" class="btn btn-block mb-4 btn-sign">Envoyer</button>
         </form>
-    </div>
+    </div>-->
     <!--Form end-->
 <?php require_once 'footer.php'; ob_end_flush();
 ?>
