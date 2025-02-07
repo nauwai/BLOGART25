@@ -1,6 +1,10 @@
 <?php
 ob_start();
 
+if ($_SESSION['statut'] != '1' || empty($_SESSION)) {
+    header('Location: /');
+}
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
