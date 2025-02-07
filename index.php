@@ -8,7 +8,7 @@ require_once 'header.php';
 $articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
 //var_dump($articles);
 ?>
-    <!-- Modal -->
+    <!-- Modal
     <div class="modal fade" id="cookieModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -24,7 +24,7 @@ $articles = sql_select('ARTICLE', "*", "1", null, "dtCreaArt DESC", "2");
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- banner section start -->
     <div class="container-fluid">
