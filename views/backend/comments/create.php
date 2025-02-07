@@ -1,6 +1,18 @@
 <?php
 include '../../../header.php';
 
+if (empty($_SESSION)) {
+    header('Location: /');
+    exit();
+}
+
+
+if (!isset($_SESSION['statut']) || $_SESSION['statut'] != '1') {
+    header('Location: /');
+    exit();
+}
+
+
 $query = "COMMENT 
             JOIN MEMBRE ON MEMBRE.numMemb = COMMENT.numMemb
             JOIN ARTICLE ON ARTICLE.numArt = COMMENT.numArt

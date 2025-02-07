@@ -1,6 +1,18 @@
 <?php
 include '../../../header.php';
 
+if (empty($_SESSION)) {
+    header('Location: /');
+    exit();
+}
+
+
+if (!isset($_SESSION['statut']) || $_SESSION['statut'] != '1') {
+    header('Location: /');
+    exit();
+}
+
+
 if(isset($_GET['numMemb'])){
     $pseudoMemb = $_GET['numMemb'];
     $psMemb = sql_select("MEMBRE", "pseudoMemb", "numMemb = $pseudoMemb")[0]['pseudoMemb'];

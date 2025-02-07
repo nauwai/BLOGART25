@@ -1,6 +1,16 @@
 <?php
 include '../../../header.php'; // contains the header and call to config.php
 
+if (empty($_SESSION)) {
+    header('Location: /');
+    exit();
+}
+
+
+if (!isset($_SESSION['statut']) || $_SESSION['statut'] != '1') {
+    header('Location: /');
+    exit();
+}
 
 $query = "MEMBRE INNER JOIN STATUT ON MEMBRE.numStat = STATUT.numStat";
 $membres = sql_select($query, "*");

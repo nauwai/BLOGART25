@@ -1,6 +1,18 @@
 <?php
 include '../../../header.php';
 
+if (empty($_SESSION)) {
+    header('Location: /');
+    exit();
+}
+
+
+if (!isset($_SESSION['statut']) || $_SESSION['statut'] != '1') {
+    header('Location: /');
+    exit();
+}
+
+
 if(isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
     $psArt = sql_select("ARTICLE", "libTitrArt", "numArt = $numArt")[0]['libTitrArt'];
