@@ -1,6 +1,11 @@
 <?php
 include '../../../header.php'; // contains the header and call to config.php
 
+
+if ($_SESSION['statut'] != '1' || empty($_SESSION)) {
+    header('Location: /');
+}
+
 //Load all article
 $query = "ARTICLE 
             INNER JOIN THEMATIQUE ON ARTICLE.numThem = THEMATIQUE.numThem
